@@ -117,3 +117,70 @@ insertAt(element, index)
         this.size++;
     }
 }
+
+// In order to add an element at the given index of the list we consider three conditions as follows: 
+
+// 1. if the index is zero we add an element at the front of the list and make it head
+// 2. If the index is the last position of the list we append the element at the end of the list
+// 3. if the index is between 0 or size – 1 we iterate over to the index and add an element at that index
+
+8.
+// removes an element from the specified location
+removeFrom(index)
+{
+    if(index<0|| index>=this.size) return console.log("Please Enter a valid index");
+    else{
+        var curr, prev, it=0
+        curr=this.headprev=curr
+        //deleting first element
+
+        if(index===0) this.head= curr.next
+        else{
+               // iterate over the list to the position to removce an element
+               while(it<index){
+                it++
+                prev=curr
+                curr=curr.next
+               }
+               //remove the element
+               prev.next=curr.next
+        }
+        this.size--
+
+          // return the remove element
+          return curr.element;
+    }
+}
+
+// In order to remove an element from the list we consider three conditions: 
+
+// 1. If the index is 0 then we remove the head and make the next node head of the list
+// 2. if the index is size – 1 then we remove the last element from the list and make prev the last element
+// 3. if it’s in between 0 to size – 1 we remove the element by using prev and the current node
+
+
+8.
+
+// removes a given element from the list
+removeElement(element)
+{
+    var current = this.head;
+    var prev = null;
+ 
+    // iterate over the list
+    while (current != null) {
+        // comparing element with current element if found then remove the and return true
+        if (current.element === element) {
+            if (prev == null) {
+                this.head = current.next;
+            } else {
+                prev.next = current.next;
+            }
+            this.size--;
+            return current.element;
+        }
+        prev = current;
+        current = current.next;
+    }
+    return -1;
+}
