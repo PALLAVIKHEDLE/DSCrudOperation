@@ -202,3 +202,19 @@ displayList()
      return printArrayList.join(' -> ');
 }
 
+10. //// The reverse method reverses the list and all pointers so that the head becomes the tail and the tail becomes the head
+reverse()
+{
+  const node = this.head
+  this.head = this.tail
+  this.tail = node
+  let next
+  const prev = null
+  for(let i = 0; i < this.length; i++) {
+    next = node.next
+    node.next = prev
+    prev = node
+    node = next
+  }
+  return this
+}
