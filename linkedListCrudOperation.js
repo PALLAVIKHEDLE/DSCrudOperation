@@ -4,7 +4,6 @@
 // 2. Deletion − Deletes an element at the beginning of the list.
 // 3. Display − Displays the complete list.
 // 4. Search − Searches an element using the given key.
-// 5. Delete − Deletes an element using the given key.
 // 6. Traversal - access each element of the linked list
 // 7. Sort - sort the nodes of the linked list
 
@@ -12,7 +11,6 @@
 
 // head points to the first node of the linked list
 // next pointer of the last node is NULL, so if the next current node is NULL, we have reached the end of the linked list.
-
 
 
 1. 
@@ -119,7 +117,6 @@ insertAt(element, index)
 }
 
 // In order to add an element at the given index of the list we consider three conditions as follows: 
-
 // 1. if the index is zero we add an element at the front of the list and make it head
 // 2. If the index is the last position of the list we append the element at the end of the list
 // 3. if the index is between 0 or size – 1 we iterate over to the index and add an element at that index
@@ -184,3 +181,24 @@ removeElement(element)
     }
     return -1;
 }
+
+
+9.
+//Display List 
+displayList()
+{
+    //Create an empty array.
+    let displayArrayList=[]
+    //Pointer which points to the head node
+    let currentNode=this.head
+    //start iterating from the first node till you reach the last node
+    while(currentNode!=null){
+        //add every node's value to the array
+        displayArrayList.push(currentNode.value)
+        //point pointer to the next node
+        currentNode = currentNode.next;
+    }
+     //Return the array
+     return printArrayList.join(' -> ');
+}
+
