@@ -71,3 +71,15 @@ rear()
         return "No elements in Queue";
     return this.items[this.items.length - 1];
 }
+
+
+
+
+
+
+// Some priority queue JavaScript implementations on the wild:
+
+// closure-library: heap.js, priorityqueue.js
+// dsa.js: heap.js, priority-queue.js, min-heap.js, max-heap.js
+// async : priorityQueue.js, Heap.js.
+// datastructures-js: heap.js, priorityQueue.js
