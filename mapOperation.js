@@ -11,12 +11,8 @@ let array1 = [1, 3, 4, 5, 5, 7];
 map = {};
 for (let i = 0; i <= array1.length - 1; i++) {
   let val = map[array1[i]];
-  if (val == undefined) {
-    map[array1[i]] = 1;
-  }else{
-    map[array1[i]] =val+1;
-
-  }
+  if (val == undefined)map[array1[i]] = 1;
+  else map[array1[i]] =val+1;
 }
 
 3.
